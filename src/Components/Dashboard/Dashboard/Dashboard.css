@@ -1,0 +1,12 @@
+.drawer {
+  height: 800px;
+  background-image: linear-gradient(rgb(137, 229, 206), rgb(202, 228, 220));
+}
+.main-container {
+  height: 800px;
+}
+.dashboard-list li {
+  list-style: none;
+  text-align: justify;
+  color: black;
+}

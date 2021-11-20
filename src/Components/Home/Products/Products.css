@@ -1,0 +1,19 @@
+.orange {
+  color: rgb(247, 149, 70);
+}
+.card-body:hover {
+  color: rgb(104, 38, 38);
+}
+.card-border:hover {
+  box-shadow: 25px 5px 50px rgb(231, 134, 109);
+}
+.order-btn {
+  background-color: rgb(247, 149, 70);
+  border: 3px solid rgb(247, 213, 207);
+  padding: 5px 25px;
+
+  border-radius: 10px;
+}
+.order-btn:hover {
+  padding: 5px 30px;
+}

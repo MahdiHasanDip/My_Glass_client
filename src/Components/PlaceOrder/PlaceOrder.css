@@ -1,0 +1,12 @@
+.place-order {
+  border: 1px solid red;
+  padding: 50px;
+  background-color: rgb(224, 241, 243);
+}
+.place-order img {
+  width: 550px;
+}
+
+.Add-to-cart-btn {
+  color: red;
+}

@@ -1,0 +1,19 @@
+.footer-container {
+  background: rgb(39, 38, 38);
+  color: silver;
+  padding-top: 89px;
+  padding-bottom: 50px;
+  padding-left: 45px;
+}
+.footer-container b {
+  color: silver;
+}
+.footer-container b:hover {
+  color: rgb(240, 166, 166);
+}
+.footer-submit {
+  padding: 5px 45px;
+  color: silver;
+  background: rgb(70, 54, 54);
+  border: none;
+}

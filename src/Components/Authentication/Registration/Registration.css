@@ -1,0 +1,12 @@
+.login {
+  border: solid 1px red;
+  padding: 85px;
+  background-color: rgb(217, 218, 218);
+}
+.login-form {
+  background-color: rgb(209, 209, 209);
+  padding: 30px;
+}
+.login-form input {
+  margin: 5px;
+}
