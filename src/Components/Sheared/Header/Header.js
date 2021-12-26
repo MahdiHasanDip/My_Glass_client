@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 import "./Header.css"
 
@@ -7,52 +8,29 @@ const Header = () => {
     const {user,handleLogout}= useFirebase();
     return (
         <div className="header">
-                      
-            <div className="row">
-
-                <div className="col-sm col-lg-2">
-                    <h1 >My <span className='text-danger'>Glass</span> </h1>
-                 </div>
-
-                <div className="col-sm col-lg-6">
-
-                <ul className='Nav-link'>
-                
-                    <li><NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to="/" className="Link">Home</NavLink></li>
-
-                    <li><NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to="/allProduct" className="Link">All product</NavLink></li>
-
-
-                    <li><NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to="/dashboard" className="Link">Dashboard</NavLink></li>
-                
-                
-                </ul>
-
-
-
-
-                </div>
-
-                <div className="col-sm col-lg-4">
-                   
-                {user.email
-                           ?
-                            <span>
-                                <button className={"btn btn-outline-danger"} onClick={handleLogout}>logout</button>
-                                <p>Welcome: {user.email}</p>
-                                
-                            </span>
-                            :
-                             <NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to="/login" className="Link">Login</NavLink>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Container>
+  <Navbar.Brand href="#home"><h1 >My <span className='text-danger'>Glass</span> </h1></Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="me-auto">
+      
+    </Nav>
+    <Nav>
+      <Nav.Link as={Link} to="/">Home</Nav.Link>
+      <Nav.Link as={Link} to="/allProduct">Products</Nav.Link>
+      <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+      {user.email ?                       
+            <button className={"btn btn-outline-danger"} onClick={handleLogout}>logout</button>                             
+                  :
+            <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }
-
-
-
-                   
-                </div>
-
-            </div>
-        </div>
+     
+            </Nav>
+        </Navbar.Collapse>
+        </Container>
+        </Navbar>        
+ </div>
      );
 };
 

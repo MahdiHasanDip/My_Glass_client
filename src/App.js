@@ -21,6 +21,7 @@ import MyOrder from "./Components/Dashboard/MyOrders/MyOrder";
 import ManageOrder from "./Components/Dashboard/ManageOrder/ManageOrder";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import AdminRoute from "./Components/AdminRoute/AdminRoute";
+import Aboutus from "./Components/Home/AboutUs/Aboutus";
 
 function App() {
   return <div className="App">
@@ -51,6 +52,9 @@ function App() {
             </AdminRoute>
             <AdminRoute path="/manageProduct">
               <ManageProduct></ManageProduct>
+            </AdminRoute>
+            <AdminRoute path="/about">
+              <Aboutus/>
             </AdminRoute>
             <Route path="/login">
               <Login></Login>
