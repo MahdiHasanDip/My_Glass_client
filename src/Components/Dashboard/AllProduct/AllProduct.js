@@ -11,7 +11,11 @@ const AllProduct = () => {
     })
     return (
         <div>
-            <h1 className="">Our Products {products.length}</h1>
+            <div >
+                <img className="img-fluid" src="https://i.ibb.co/Tg2Zk8R/My-2.png" alt="" />
+            </div>
+            <h1 className="mb-5">Our Products</h1>
+            <hr />
 
 
             <div className="container ">

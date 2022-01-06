@@ -5,14 +5,11 @@ import "./Banner.css"
 const Banner = () => {
     return (
         <div className="Banner-container">
+            <img src="https://i.ibb.co/DpVbSFt/My-1.png" alt="" />
             <div className="container ">
-                <div className="banner-title">
-                <div className=""><h1>Welcome To <span className="text-danger"> My Glass</span></h1></div>
-                </div>
                 
-               <Link to="/allProduct"> 
-               <button className="banner-btn"> Explore more</button>
-               </Link>
+                
+               
             </div>
         </div>
     );

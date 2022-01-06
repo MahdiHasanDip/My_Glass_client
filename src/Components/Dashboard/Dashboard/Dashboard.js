@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    NavLink ,
+    Link ,
     useRouteMatch
   } from "react-router-dom"
 import AdminRoute from '../../AdminRoute/AdminRoute';
@@ -26,35 +26,35 @@ const Dashboard = () => {
                     <div class="col col-sm-12 col-lg-3 drawer">
                         <h1>Dashboard</h1>
                         <hr />
-                        <p>{user.email}</p>
+                        
                         {/* Drawer  */}
                         <ul className="dashboard-list">
                             <li>
-                             <NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to={`${url}`} className="Link">Home</NavLink>
-                        </li>
+                             <Link style={{paddingLeft: 13, textDecoration: 'none', color: " black"}} to={`${url}`} className="Link">Home</Link>
+                         </li> <hr/>
                         <li>
-                            <NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to={`${url}/Payment`}  className="Link">Payment</NavLink>
-                        </li>
+                            <Link style={{paddingLeft: 13, textDecoration: 'none', color: " black"}} to={`${url}/Payment`}  className="Link">Payment</Link>
+                         </li> <hr/>
                         <li>
-                            <NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to={`${url}/Order`}  className="Link">My Order</NavLink>
-                        </li>
+                            <Link style={{paddingLeft: 13, textDecoration: 'none', color: " black"}} to={`${url}/Order`}  className="Link">My Order</Link>
+                         </li> <hr/>
                         {
                             admin
                             && 
                             <span>
                             <li>
-                            <NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to={`${url}/manageOrder`}  className="Link">Manage Orders</NavLink>
-                        </li>
-                        <li><NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to={`${url}/AddProduct`}  className="Link">Add A Product</NavLink>
-                        </li>  
+                            <Link style={{paddingLeft: 13, textDecoration: 'none', color: " black"}} to={`${url}/manageOrder`}  className="Link">Manage Orders</Link>
+                         </li> <hr/>
+                        <li><Link style={{paddingLeft: 13, textDecoration: 'none', color: " black"}} to={`${url}/AddProduct`}  className="Link">Add A Product</Link>
+                         </li> <hr/>  
                         <li>
-                            <NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to={`${url}/manageProduct`}
-                            className="Link">Manage Product</NavLink>
-                        </li>
+                            <Link style={{paddingLeft: 13, textDecoration: 'none', color: "black"}}  to={`${url}/manageProduct`}
+                            className="Link">Manage Product</Link>
+                         </li> <hr/>
                         <li>
-                            <NavLink activeStyle={{fontWeight: "bold", color: "black" ,textDecoration:"none" }} to={`${url}/MakeAdmin`}
-                            className="Link">Make Admin</NavLink>
-                        </li>
+                            <Link style={{paddingLeft: 13, textDecoration: 'none', color: " black"}} to={`${url}/MakeAdmin`}
+                            className="Link">Make Admin</Link>
+                         </li> <hr/>
 
                             </span>
                         }
@@ -62,8 +62,12 @@ const Dashboard = () => {
                         <br />
                         <br />
                         <br />
+                        <p> Loged as : {user.email}</p>
+                        {admin&& <p>Admin</p>}
+                        <hr/>
+                         <li><button className="btn btn-outline-danger
+                         " onClick={handleLogout}>logout</button> </li> 
                         <br />
-                         <li><button className="btn btn-outline-danger" onClick={handleLogout}>logout</button></li>
                   
                          </ul>
                      </div>
@@ -72,7 +76,10 @@ const Dashboard = () => {
                     <div class="col col-sm-12 col-lg-9 main-container">
                     <Switch>
                         <Route exact path={path}>
-                        <h3>Welcome to Dashboard</h3>
+                        <div > 
+                            <h1>Dashboard Home</h1> <hr />
+                            <img className='welcome img-fluid mt-5' src="https://i.ibb.co/g6VFT3d/TO-DASHBOARD.png" alt="" />
+                        </div>
                         </Route>
                         <AdminRoute path={`${path}/AddProduct`}>
                         <AddProduct></AddProduct>

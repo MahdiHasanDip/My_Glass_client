@@ -17,3 +17,6 @@
 .order-btn:hover {
   padding: 5px 30px;
 }
+.card-body {
+  height: 430px;
+}
