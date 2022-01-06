@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Col,  Row } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
+import { useHistory, useLocation } from 'react-router';
 import './Registration.css'
 
 const Registration = () => {
+    const history = useHistory();
+    const location = useLocation();
+    const redirect = location.state?.from || "/home";
     const {
         handleGoogleSignIn,        
         handleRegister   
@@ -22,7 +26,7 @@ const Registration = () => {
       //   console.log(password)
       };
       const handleRegisterBtn = (e) => {
-          handleRegister(email, password)
+          handleRegister(email, password,location,history)
           e.preventDefault();
           console.log(email, password);  
 

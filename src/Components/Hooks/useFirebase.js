@@ -62,10 +62,12 @@ useEffect(() => {
 },[])
 
 // user registration
-const handleRegister = (email, password) => {
+const handleRegister = (email, password,location,history) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      const destination = location?.state?.from || '/';
+      history.replace(destination);
         // Signed in 
         const user = userCredential.user;
 
