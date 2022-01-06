@@ -77,8 +77,7 @@ const handleRegister = (email, password) => {
         const errorMessage = error.message;
         // ..
       })
-      .then(()=>handleLogout())
-        .finally(() => setIsLoading(false));
+      .finally(() => setIsLoading(false));
 };
 
 // user post to db 

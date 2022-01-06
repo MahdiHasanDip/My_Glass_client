@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Col,  Row } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 import './Registration.css'
 
@@ -28,23 +29,40 @@ const Registration = () => {
   
         };
     return (
-        <div className="login">
-            <div className="login-form">
-            <form onSubmit={handleRegisterBtn}>
-                <h1>Registration</h1>
-                <input onChange={handleEmail} type="email" /> <br />
-                <input onChange={ handlePassword } type="password" /> <br />
-                <input type="submit" value="Submit" />
-            </form>
-            <span>.....................................................</span>
-            <NavLink to="/login">
-                 <p>Already Register? Login here...</p>
-            </NavLink>
-            <p>Or</p>
-            <button onClick={handleGoogleSignIn}>Sign up with Google</button>
+<div className="Login"> 
+        <div className="container login-form">
+            <>
+                <Row>
+                <Col xs={12} lg={6} className="Reg-section">
+                        <div >
+                            <h1>Welcome to Registration</h1>
+                            <h4>Have an account?</h4>
+                            <Link to="/login" ><button className='link-btn'>Sign In</button></Link>
+                        </div>
+                    </Col>
 
-         </div>
-         </div>
+                    <Col xs={12} lg={6}>
+                        <div className="login-sec"> 
+                            <h3> Register Here</h3>    
+                            <hr />                     
+                                <form className='Form' onClick={handleRegisterBtn}>
+                                        <input onBlur={handleEmail} type="email"  placeholder='Email'  />
+                                        <br /> <br />
+                                        <input onBlur={handlePassword} type="password" placeholder='Password' />
+                                        <br /> <br />
+                                        <input id="submit" type="submit" value="Submit" />
+                                    </form>
+                                    <br />                                    
+                                <button className='google-login' onClick={handleGoogleSignIn}>
+                                    Login with Google
+                                </button>
+                                <br /><br /><br />                              
+                        </div>
+                    </Col>                   
+                </Row>
+            </>
+        </div>                              
+    </div>
     );
 };
 
